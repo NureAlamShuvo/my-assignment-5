@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Issue Tracker</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- tailwind and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <h2>hello</h2>
+
+<body class="min-h-screen max-w-md mx-auto">
+
+
+    <!-- login area -->
+    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto mt-20">
+        <div class="mx-auto p-8">
+            <img src="./assets/github-logo.png" alt="" class="mx-auto mb-6">
+            <h2 class="text-[#1F2937] font-semibold text-2xl">GitHub Issues Tracker</h2>
+            <p class="text-[#64748B] text-center">Sign in to manage your issues</p>
+        </div>
+        
+        <div class="card-body">
+            <fieldset class="fieldset">
+                <label class="label font-bold text-neutral">Username</label>
+                <input id="input-username" type="text"
+                    class="input rounded-md bg-base-200" placeholder="Enter Username" />
+                <br>
+                <label class="label font-bold text-neutral">Password</label>
+                <input id="input-pass" type="password" class="input rounded-md bg-base-200"
+                    placeholder="Enter Password" />
+                <button id="signin-btn" class="btn btn-primary mt-4 rounded-md">Sign In</button>
+            </fieldset>
+        </div>
+
+        <!-- Demo Credentials: -->
+         <div class="card-body">
+            <div class="flex items-center gap-3">
+                <div class="h-px flex-1 bg-gray-300"></div>
+                <span>OR</span>
+                <div class="h-px flex-1 bg-gray-300"></div>
+            </div>
+            <p class="text-[#64748B] text-center">Demo Credentials:</p>
+            <div class="bg-[#F8FAFC] text-center py-6">
+                <h2 class="text-[#1F2937]"><span>Username</span>: <span>admin</span></h2>
+                <h2 class="text-[#1F2937]"><span>Password</span>: <span>admin123</span></h2>
+            </div>
+         </div>
+    </div>
+
+
+    <script src="./login.js"></script>
 </body>
+
 </html>
