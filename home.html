@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- fontawsome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         * {
             font-family: "Geist", sans-serif;
@@ -21,7 +25,31 @@
     </style>
 </head>
 </head>
+
 <body>
-    <h2>Hello</h2>
+    <header>
+        <nav class="flex justify-around items-center border-b border-[#E9E9E9] py-5">
+            <div class="flex items-center gap-1">
+                <img src="./assets/github-logo.png" alt="" class="w-10">
+                <h2 class="text-[#1F2937] font-semibold text-2xl">GitHub Issues Tracker</h2>
+            </div>
+            <div>
+                <div class="join">
+                    <div>
+                        <label class="input validator join-item">
+                            <i class="fa-brands fa-sistrix"></i>
+                            <input type="email" placeholder="Search issues..." required />
+                        </label>
+                        
+                    </div>
+                    <button class="btn btn-primary">+New Issue</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- main area -->
 </body>
+
 </html>
