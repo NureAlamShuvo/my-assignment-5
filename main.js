@@ -8,7 +8,6 @@ const btnIssue = document.getElementById("issue-count");
 
 let allCards = [];
 
-
 // Issue card load function
 async function issueCardLoad() {
 
@@ -33,7 +32,6 @@ function displayIssueCard (cards) {
 
 
     cards.forEach((card) => {
-        console.log(card);
 
         const date = new Date(card.updatedAt);
         const dateConverUs = date.toLocaleDateString("en-US");
@@ -41,7 +39,7 @@ function displayIssueCard (cards) {
         let labelsProp = "";
 
         card.labels.forEach((label) =>{
-            labelsProp += `<span class="badge badge-warning whitespace-nowrap">${label.toLocaleUpperCase()}</span>`
+            labelsProp += `<span class="badge badge-warning whitespace-nowrap text-[10px] font-bold">${label.toLocaleUpperCase()}</span>`
         });
 
         const newCard = document.createElement("div");
@@ -78,7 +76,7 @@ function displayIssueCard (cards) {
                     <p class="text-[#64748B] line-clamp-2">${card.description}</p>
                 
 
-                <div class="flex gap-2 items-center min-h-6">
+                <div class="flex gap-2 mt-4">
                     ${labelsProp}
                 </div>
                 <hr class="text-gray-400">
