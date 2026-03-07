@@ -142,3 +142,19 @@ btnClosed.addEventListener("click", function(){
 });
 
 issueCardLoad();
+
+
+// search implement
+
+const btnSearch = document.getElementById("btn-search");
+const inputSearch = document.getElementById("input-search");
+
+btnSearch.addEventListener("click", async () => {
+    const searchText = inputSearch.value.trim().toLowerCase();
+
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+    const data = await res.json();
+    
+
+    displayIssueCard(data.data);
+});
