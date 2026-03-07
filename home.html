@@ -56,9 +56,9 @@
         <!-- section header -->
         <section class="mt-14">
             <div class="bg-[#F8FAFC] py-6 px-3 flex gap-3">
-                <button class="btn btn-primary">All</button>
-                <button class="btn btn-soft">Open</button>
-                <button class="btn btn-soft">Closed</button>
+                <button id="btn-all" class="btn btn-primary">All</button>
+                <button id="btn-open" class="btn btn-soft">Open</button>
+                <button id="btn-closed" class="btn btn-soft">Closed</button>
             </div>
 
             <!-- left side -->
@@ -66,7 +66,7 @@
                 <div class="flex gap-2 items-center">
                     <img src="./assets/Aperture.png" alt="" class="h-8">
                     <div>
-                        <h2 class="text-[#1F2937] font-semibold text-xl">50 Issues</h2>
+                        <h2 id="issue-count" class="text-[#1F2937] font-semibold text-xl"></h2>
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
             </div> -->
         </section>
 
-        <div id="loading-spinner" class="hidden flex justify-center">
+        <div id="loading-spinner" class="hidden justify-center">
             <span class="loading loading-spinner loading-xl"></span>
         </div>
     </main>
