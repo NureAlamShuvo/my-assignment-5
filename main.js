@@ -1,12 +1,18 @@
 const cardContainer = document.getElementById("card-container");
+const loadingSpinner = document.getElementById("loading-spinner");
 
 
 // Issue card load function
 async function issueCardLoad() {
+
+    loadingSpinner.classList.remove("hidden");
+
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     const data = await res.json();
     
     displayIssueCard(data.data);
+
+    loadingSpinner.classList.add("hidden");
 };
 
 function displayIssueCard (cards) {
@@ -49,7 +55,7 @@ function displayIssueCard (cards) {
         newCard.innerHTML = `
         <div class="flex justify-between">
                     <img src="${card.status === "open" ? './assets/Open-Status.png' : './assets/Closed- Status .png'}" alt="" class="h-6">
-                    
+
                     <span class="${priorityBadge}">${card.priority.toLocaleUpperCase()}</span>
                 </div>
 
