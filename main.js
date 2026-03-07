@@ -41,7 +41,7 @@ function displayIssueCard (cards) {
         let labelsProp = "";
 
         card.labels.forEach((label) =>{
-            labelsProp += `<span class="badge badge-error whitespace-nowrap">${label.toLocaleUpperCase()}</span>`
+            labelsProp += `<span class="badge badge-warning whitespace-nowrap">${label.toLocaleUpperCase()}</span>`
         });
 
         const newCard = document.createElement("div");
@@ -89,6 +89,29 @@ function displayIssueCard (cards) {
                 </div>
         `
         cardContainer.appendChild(newCard);
+
+        newCard.addEventListener("click", function(){
+
+            const date = new Date(card.createdAt);
+            const modalDate = date.toLocaleDateString("en-US");
+
+            document.getElementById("modal-title").innerText = card.title;
+            document.getElementById("modal-status").innerText = card.status === "open" ? "Opened" : "Closed";
+            document.getElementById("modal-author").innerText = `- Opened by ${card.author}`;
+            document.getElementById("modal-date").innerText = `- ${modalDate}`;
+            document.getElementById("modal-description").innerText = card.description;
+            document.getElementById("modal-assignee").innerText = card.assignee ? card.assignee : "Unassigned";
+            document.getElementById("modal-priority").innerText = card.priority.toLocaleUpperCase();
+
+            let modalLabels = "";
+            card.labels.forEach(label => {
+                modalLabels += `<span class="badge badge-warning">${label.toLocaleUpperCase()}</span>`;
+            });
+
+            document.getElementById("modal-labels").innerHTML = modalLabels;
+
+            issue_card_details.showModal();
+        });
     });
 };
 

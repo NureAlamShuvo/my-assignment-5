@@ -87,8 +87,8 @@
 
         <!-- card section -->
         <section id="card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 py-6 px-6">
-            
-            
+
+
             <!-- <div class="space-y-4 shadow-md p-4">
                 <div class="flex justify-between">
                     <img src="./assets/Open-Status.png" alt="" class="h-6">
@@ -115,6 +115,45 @@
         <div id="loading-spinner" class="hidden justify-center">
             <span class="loading loading-spinner loading-xl"></span>
         </div>
+
+        <!-- details modal -->
+        <dialog id="issue_card_details" class="modal">
+            <div class="modal-box">
+                <div class="space-y-4">
+
+                    <h2 id="modal-title" class="font-bold text-[#1F2937] text-2xl"></h2>
+                    <div class="space-y-4 flex gap-1">
+
+                        <span id="modal-status" class="badge badge-outline badge-success"></span>
+                        <span id="modal-author" class="text-[#64748B]"></span>
+                        <span id="modal-date" class="text-[#64748B]"></span>
+
+                    </div>
+
+                    <div id="modal-labels" class="flex gap-2"></div>
+
+                    <p id="modal-description" class="text-[#64748B]"></p>
+
+                    <div class="bg-[#F8FAFC] flex justify-between px-2 py-2">
+                        <div>
+                            <p class="text-[#64748B]">Assignee:</p>
+                            <h2 id="modal-assignee" class="text-[#1F2937] font-semibold"></h2>
+                        </div>
+                        <div>
+                            <p class="text-[#64748B]">Priority:</p>
+                            <span id="modal-priority" class="badge badge-soft badge-error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
     </main>
 
 
